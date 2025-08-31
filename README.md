@@ -26,9 +26,9 @@ Of course, you will need dkms and a compiler toolchain to compile your module.
 sudo apt-get install build-essential dkms
 ```
 
-Then, you need to get the headers and sources for your kernel. If there is a tag in
-the repository that matches your kernel, you can checkout the respective tag from the
-repository and skip retrieving (and later updating) the sources.
+Then, you need to get the **headers and sources for your kernel**. If there is a tag
+in this repository that matches your kernel, you can checkout the respective tag from
+the repository and skip retrieving (and later updating) the sources.
 
 ```bash
 # list installed kernel images
@@ -56,8 +56,15 @@ make update
 git checkout v6.1.119
 ```
 
-If everything goes according to plan, then you should be able to load and use
-the module.
+Them you should be able to compile the module:
+
+```bash
+# copy ntfs3 module to /usr/src and use dkms to compile it
+make dkms
+```
+
+Finally, if everything goes according to plan, then you should be able to load and
+use the module.
 
 ```bash
 sudo modprobe ntfs3
